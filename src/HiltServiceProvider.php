@@ -30,9 +30,10 @@ class HiltServiceProvider extends ServiceProvider {
      */
     public function register()
     {
-        $this->app['hilt'] = $this->app->share(function($app)
-        {
+        $this->app->singleton('hilt', function(){
+
             return new Hilt;
+
         });
     }
 
